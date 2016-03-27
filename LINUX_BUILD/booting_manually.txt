@@ -1,0 +1,14 @@
+run: xmd:
+	xmd> conenct arm hw
+	xmd> source ps7_init.tcl 
+	xmd> ps7_init
+	xmd> dow u-boot.elf  // neccessary for jtag-usb to come up correctly
+	xmd> run
+	xmd> stop
+	xmd> dow -data uramdisk.image.gz 0x10000000
+	xmd> dow -data uImage 0x13200000          
+	xmd> dow -data zynq-zybo.dtb 0x16400000 
+
+on another console, connect to board using jtag-usb
+	hossein> sudo picocom -b 115200 /dev/ttyUSB1:		
+	=> bootm 0x13200000 0x10000000 0x16400000 
