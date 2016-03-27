@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+	[bootloader]/home/hossein/Vivado/bare_min/bare_min.sdk/zynq_FSBL/Debug/zynq_FSBL.elf
+	/home/hossein/Downloads/LINUX_BUILD/BOOT/bare_min.bit
+	/home/hossein/Downloads/LINUX_BUILD/u-boot.elf
+}
