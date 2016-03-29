@@ -36,7 +36,6 @@ case "$1" in
 		fi
 		gzip $FILE_SYSTEM_IMAGE	
 		mkimage -A arm -T ramdisk -C gzip -d $FILE_SYSTEM_IMAGE.gz uramdisk.image.gz
-		mv ./uramdisk.image.gz /media/sf_SHARED_FOLDER/ 		
 	;;
         *)
 		echo "sh| make_image.sh -h| -pack file_system_directory image_file | -unpack zipped_file_system mount_point "	
