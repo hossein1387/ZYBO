@@ -1,0 +1,7 @@
+1- Download the arm root file system from http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs (use a perfect copy of arm_ramdisk.image.gz if you have it localy available )
+2- gunzip arm_ramdisk.image.gz
+3- make sure the unzipped file has the proper permission for user root: chmod u+rwx arm_ramdisk.image
+4- mount the ramdisk to local drive (assuming the tmp_mnt is already created): sudo mount -o loop arm_ramdisk.image tmp_mnt/
+5- make changes in the file system an unmount and zip the temporary folder: sudo umount tmp_mnt/ & gzip arm_ramdisk.image
+6- the image needs to be wrapped around u-boot headers, for that use mkimage utility (apt-get install u-boot-tools): mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
+7- do neccessary cleanups (rm -rf tmp_mnt)  
