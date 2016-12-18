@@ -24,7 +24,8 @@ Then plug-in your ZYBO board using the USB-Jtag connector. Now type xmd and then
 	 xmd> dow -data uImage 0x13200000          
 	 xmd> dow -data zynq-zybo.dtb 0x16400000 
 
-on another console, connect to board using jtag-usb
+on another console, connect to board using jtag-usb:
+
 	 hossein> sudo picocom -b 115200 /dev/ttyUSB1:		
 	 => bootm 0x13200000 0x10000000 0x16400000
 
