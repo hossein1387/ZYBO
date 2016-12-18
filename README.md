@@ -8,6 +8,7 @@ ARM host of the ZYNQ.
 
 Files for manual boot is available in this repo at [LINUX_BUILD/BOOTABLE](https://github.com/hossein1387/ZYBO/tree/master/LINUX_BUILD/BOOTABLE).
 To manually boot linux, you need to setup your environment to use Xilinx tools, specially XMD. For that you can use:
+
     source /PATH/TO/XILINX/INSTALLATION/settings64.sh
 
 Then plug-in your ZYBO board using the USB-Jtag connector. Now type xmd and then:
