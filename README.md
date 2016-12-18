@@ -30,7 +30,7 @@ on another console, connect to board using jtag-usb:
 	 hossein> sudo picocom -b 115200 /dev/ttyUSB1:		
 	 => bootm 0x13200000 0x10000000 0x16400000
 
-<img src="https://github.com/hossein1387/ZYBO/blob/master/images/lunxh.png" width="400" />
+<img src="https://github.com/hossein1387/ZYBO/blob/master/images/lunxh.png" width="700" />
 
 ## Copyright
 
