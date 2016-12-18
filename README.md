@@ -6,7 +6,7 @@ ARM host of the ZYNQ.
 
 ## Booting Manually:
 
-Files for manual boot is available in this repo at [LINUX_BUILD/BOOTABLE](https://github.com/hossein1387/ZYBO/tree/master/LINUX_BUILD/BOOTABLE).
+Files for manual boot is available in this repo at [LINUX_BUILD/BOOTABLE/BARE_MIN/](https://github.com/hossein1387/ZYBO/tree/master/LINUX_BUILD/BOOTABLE/BARE_MIN/).
 To manually boot linux, you need to setup your environment to use Xilinx tools, specially XMD. For that you can use:
 
     source /PATH/TO/XILINX/INSTALLATION/settings64.sh
