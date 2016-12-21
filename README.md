@@ -72,6 +72,7 @@ Copyright (c) 2016 [hossein1387](http://hossein1387.github.io/).
 ## Useful repos and resources:
 
 http://www.googoolia.com/wp/
+
 https://github.com/ucb-bar/fpga-zynq
 
 
