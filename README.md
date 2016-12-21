@@ -40,27 +40,27 @@ The script for automating this process is available in this repository at [RootF
 
 2- Unzip the file by typing:
 
-		gunzip arm_ramdisk.image.gz
+	gunzip arm_ramdisk.image.gz
 
 3- Make sure the unzipped file has the proper permission for user root:
 
-		chmod u+rwx arm_ramdisk.image
+	chmod u+rwx arm_ramdisk.image
 
 4- Mount the ramdisk to local drive (assuming the tmp_mnt is already created):
 
-        sudo mount -o loop arm_ramdisk.image tmp_mnt/
+    sudo mount -o loop arm_ramdisk.image tmp_mnt/
 
 5- Make changes in the file system an unmount and zip the temporary folder:
   
-		sudo umount tmp_mnt/ & gzip arm_ramdisk.image
+	sudo umount tmp_mnt/ & gzip arm_ramdisk.image
 
 6- The image needs to be wrapped around u-boot headers, for that use mkimage utility (if you don't have it: apt-get install u-boot-tools):
 
-		mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
+	mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
 
 7- Do neccessary cleanups:
 
-		rm -rf tmp_mnt
+	rm -rf tmp_mnt
 
 Now that the filesystem is ready you can save it on an SD card. These steps are automated by make_image.sh script in [RootFs](https://github.com/hossein1387/ZYBO/tree/master/RootFs) repository. 
 
