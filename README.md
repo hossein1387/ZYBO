@@ -22,7 +22,7 @@ Then plug-in your ZYBO board using the USB-Jtag connector. Now type xmd and then
  	 xmd> dow -data uramdisk.image.gz 0x10000000
 	 xmd> dow -data uImage 0x13200000          
 	 xmd> dow -data zynq-zybo.dtb 0x16400000 
-         xmd> run
+     xmd> run
 
 on another console, connect to board using jtag-usb:
 
@@ -31,6 +31,39 @@ on another console, connect to board using jtag-usb:
 
 <img src="https://github.com/hossein1387/ZYBO/blob/master/images/lunxh.png" width="700" />
 
+## Modifing FileSystem:
+Although I am still using this method, but it is very tidious nad time consuming. I do not recommend this method at all.
+The script for automating this process is available in this repository at [RootFs](https://github.com/hossein1387/ZYBO/tree/master/RootFs).
+
+1- First need to download the arm root file system from [http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs](http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs). You can use a copy of arm_ramdisk.image.gz if you have it localy available.
+
+2- Unzip the file by typing:
+
+	gunzip arm_ramdisk.image.gz
+
+3- Make sure the unzipped file has the proper permission for user root:
+
+	chmod u+rwx arm_ramdisk.image
+
+4- Mount the ramdisk to local drive (assuming the tmp_mnt is already created):
+
+    sudo mount -o loop arm_ramdisk.image tmp_mnt/
+
+5- Make changes in the file system an unmount and zip the temporary folder:
+  
+	sudo umount tmp_mnt/ & gzip arm_ramdisk.image
+
+6- The image needs to be wrapped around u-boot headers, for that use mkimage utility (if you don't have it: apt-get install u-boot-tools):
+
+	mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
+
+7- Do neccessary cleanups:
+
+	rm -rf tmp_mnt
+
+Now that the filesystem is ready you can save it on an SD card. These steps are automated by make_image.sh script in [RootFs](https://github.com/hossein1387/ZYBO/tree/master/RootFs) repository. 
+
+
 ## Copyright
 
 Copyright (c) 2016 [hossein1387](http://hossein1387.github.io/).
@@ -38,6 +71,7 @@ Copyright (c) 2016 [hossein1387](http://hossein1387.github.io/).
 ## Useful repos and resources:
 
 http://www.googoolia.com/wp/
+
 https://github.com/ucb-bar/fpga-zynq
 
 
