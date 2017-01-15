@@ -1,8 +1,7 @@
 
 # What is this?
 
-This repository contains my Linux builds and projects for ZYBO Zynq dev board. It also provides steps to manually boot linux on the 
-ARM host of the ZYNQ.
+This repository contains my Linux builds and projects for ZYBO Zynq dev board. It also provides steps to manually boot linux on the ARM host of the ZYNQ. **This is a custom build of linux for zynq with minimal utils. Maybe a better soloution for you is to use PetaLinux?** 
 
 ## Booting Manually:
 
