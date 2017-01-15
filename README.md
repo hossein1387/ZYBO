@@ -22,7 +22,7 @@ Then plug-in your ZYBO board using the USB-Jtag connector. Now type xmd and then
  	 xmd> dow -data uramdisk.image.gz 0x10000000
 	 xmd> dow -data uImage 0x13200000          
 	 xmd> dow -data zynq-zybo.dtb 0x16400000 
-     xmd> run
+         xmd> run
 
 on another console, connect to board using jtag-usb:
 
