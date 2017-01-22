@@ -35,7 +35,7 @@ on another console, connect to board using jtag-usb:
 Although I am still using this method, but it is very tidious and time consuming. I do not recommend this method at all.
 The script for automating this process is available in this repository at [RootFs](https://github.com/hossein1387/ZYBO/tree/master/RootFs).
 
-1- First need to download the arm root file system from [http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs](http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs). You can use a copy of arm_ramdisk.image.gz if you have it localy available.
+1- First you need to download the arm root file system from [http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs](http://www.wiki.xilinx.com/Build+and+Modify+a+Rootfs). You can use a copy of arm_ramdisk.image.gz if you have it localy available.
 
 2- Unzip the file by typing:
 
